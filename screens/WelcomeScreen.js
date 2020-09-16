@@ -125,6 +125,7 @@ export default class WelcomeScreen extends React.Component{
   UserLogin = (email,password) =>{
     firebase.auth().signInWithEmailAndPassword(email, password).then(()=>{
       return Alert.alert("User Login Successful")
+      this.props.navigation.navigate(BottomTabNavigation)
     })
     .catch(function(error) {
       var errorCode = error.code;
@@ -140,7 +141,7 @@ export default class WelcomeScreen extends React.Component{
     }else{
       firebase.auth().createUserWithEmailAndPassword(emailId, password)
       .then(()=>{
-        database.collection('users').add({
+        database.collection('User').add({
           first_name:this.state.firstName,
           lastName:this.state.lastName,
           contact:this.state.contact,

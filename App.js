@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import {View} from 'react-native';
+import {createSwitchNavigator,createAppContainer} from 'react-navigation'
 import WelcomeScreen from './screens/WelcomeScreen';
+import BottomTabNavigator from './components/BottomTabNavigation'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <WelcomeScreen/>
+      <AppNavigator/>
     </View>
   );
 }
@@ -19,3 +21,10 @@ const styles = StyleSheet.create({
     padding: 8,
   },
 });
+
+const AppNavigator = createSwitchNavigator({
+  Welcome:{screen:Welcome},
+  BottomTabNavigator:{screen:BottomTabNavigator}
+})
+
+const AppContainer = createAppContainer(AppNavigator)
