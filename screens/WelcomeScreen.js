@@ -13,6 +13,7 @@ import {
 
 import firebase from 'firebase'
 import database from '../config.js'
+import MyDrawer from '../components/CustomSideBarMenu.js'
 
 export default class WelcomeScreen extends React.Component{
   constructor(){
@@ -125,7 +126,7 @@ export default class WelcomeScreen extends React.Component{
   UserLogin = (email,password) =>{
     firebase.auth().signInWithEmailAndPassword(email, password).then(()=>{
       return Alert.alert("User Login Successful")
-      this.props.navigation.navigate(BottomTabNavigation)
+      this.props.navigation.navigate('MyDrawer')
     })
     .catch(function(error) {
       var errorCode = error.code;

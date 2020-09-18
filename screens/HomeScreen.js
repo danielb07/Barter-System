@@ -23,7 +23,7 @@ export default class HomeScreen extends Component{
             titleStyle={{color:'black', fontWeight:'bold'}}
             rightElement={
                 <TouchableOpacity style={styles.button}>
-                    <Text style={{color='#ffff'}}>View</Text>
+                    <Text style={{color:'#ffff'}}>View</Text>
                 </TouchableOpacity>
             }
             bottomDivider
