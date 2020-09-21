@@ -7,7 +7,7 @@ export default class ExchangeScreen extends Component{
     constructor(){
         super();
         this.state = ({
-            
+            userName : firebase.auth().currentUser.email,
             itemName:'',
             Description:''
         })
@@ -15,9 +15,15 @@ export default class ExchangeScreen extends Component{
     
 
     AddItemRequest = (item, description) =>{
+        var user = this.state.userName
         db.collection('item_request').add({
+            "userName":user,
             "itemName":item,
             "decription":description,
+        })
+        this.setState({
+            itemName:'',
+            Description:''
         })
     }
     render(){

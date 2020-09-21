@@ -52,6 +52,14 @@ export default class SettingScreen extends Component{
         })
     
         Alert.alert("Profile Updated Successfully")
+        this.setState({
+          emailId   : '',
+          firstName : '',
+          lastName  : '',
+          address   : '',
+          contact   : '',
+          docId     : ''
+        })
     
       }
 

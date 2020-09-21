@@ -4,7 +4,7 @@ import {DrawerItems} from 'react-navigation-drawer';
 
 import firebase from 'firebase'
 
-export default class MyDrawer extends Component{
+export default class CustomSideBar extends Component{
     render(){
         return(
             <View style={{flex:1}}>
