@@ -12,6 +12,7 @@ export const AppDrawerNavigator = createDrawerNavigator({
         Setting:{
             screen:SettingScreen
         }
+        
     },
     {
         contentComponent:CustomSideBarMenu
